@@ -1,0 +1,16 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nodejs-deployment
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: d_sample_app
+    spec:
+      containers:
+      - name: thirsty_hodgkin
+        image: pamal97/d_sample_app
+        ports:
+        - containerPort: 8080
